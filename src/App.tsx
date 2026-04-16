@@ -326,7 +326,7 @@ const dictionaries: Record<Locale, Dictionary> = {
           title: 'Офсетные краски CMYK',
           description: 'Базовые краски для типографского производства',
           price: 'от 82 000 сум',
-          unit: '/ за 2,5 кг',
+          unit: '/ за кг',
           lead: 'по наличию / уточнить',
         },
       ],
@@ -887,9 +887,9 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl space-y-4">
-      <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-accent">
+      <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-accent">
         <Sparkles className="h-3.5 w-3.5" />
-        {label}
+        <span className="break-words">{label}</span>
       </div>
       <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl md:text-5xl">
         {title}
@@ -1119,12 +1119,12 @@ export default function App() {
       <div className="container-shell relative z-10">
         <header className="pt-5 sm:pt-6">
           <motion.div
-            className="glass-panel flex items-center justify-between gap-4 rounded-[1.75rem] px-4 py-3 sm:px-5"
+            className="glass-panel flex flex-wrap items-start justify-between gap-3 rounded-[1.75rem] px-4 py-3 sm:items-center sm:gap-4 sm:px-5"
             initial={reduceMotion ? undefined : { opacity: 0, y: -16 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={reduceMotion ? undefined : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <a href="#" className="flex items-center gap-3">
+            <a href="#" className="min-w-0 flex-1 sm:flex-none flex items-center gap-3">
               <div className="logo-badge">
                 <img
                   src="/logo-for-applications.png"
@@ -1153,7 +1153,7 @@ export default function App() {
               </a>
             </nav>
 
-            <div className="header-controls">
+            <div className="header-controls ml-auto">
               <button
                 type="button"
                 onClick={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
@@ -1227,17 +1227,17 @@ export default function App() {
           <MotionSection className="section-space grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
             <div className="max-w-3xl">
               <motion.div
-                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-white/82"
+                className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-white/82"
                 initial={reduceMotion ? undefined : { opacity: 0, scale: 0.96 }}
                 whileInView={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={reduceMotion ? undefined : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               >
                 <BadgeCheck className="h-3.5 w-3.5 text-accent" />
-                {content.hero.badge}
+                <span className="break-words">{content.hero.badge}</span>
               </motion.div>
 
-              <h1 className="mt-6 text-5xl font-semibold leading-[0.94] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl">
+              <h1 className="mt-6 text-[2.9rem] font-semibold leading-[0.94] tracking-[-0.055em] text-white min-[360px]:text-5xl sm:text-6xl md:text-7xl">
                 {content.hero.title[0]}
                 <br />
                 {content.hero.title[1]}
@@ -1289,7 +1289,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(79,140,255,0.22),transparent_38%),radial-gradient(circle_at_bottom_left,rgba(255,122,24,0.16),transparent_32%)]" />
 
                 <div className="relative grid gap-4">
-                  <div className="flex items-center justify-between rounded-[1.5rem] border border-white/10 bg-black/18 px-4 py-3">
+                  <div className="flex flex-wrap items-start justify-between gap-3 rounded-[1.5rem] border border-white/10 bg-black/18 px-4 py-3 sm:flex-nowrap sm:items-center">
                     <div>
                       <div className="text-xs uppercase tracking-[0.22em] text-muted">{content.hero.statusLabel}</div>
                       <div className="mt-1 text-lg font-medium text-white">{content.hero.statusTitle}</div>
@@ -1301,7 +1301,7 @@ export default function App() {
 
                   <div className="grid gap-4 sm:grid-cols-[1.1fr_0.9fr]">
                     <div className="glass-panel rounded-[1.75rem] p-5">
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between gap-3">
                         <span className="text-sm text-muted">{content.hero.solutionTitle}</span>
                         <Printer className="h-5 w-5 text-accent" />
                       </div>
@@ -1412,13 +1412,13 @@ export default function App() {
                   <p className="mt-4 text-sm leading-7 text-muted">{product.description}</p>
 
                   <div className="mt-8 space-y-3">
-                    {product.points.map((point) => (
+                          {product.points.map((point) => (
                       <div
                         key={point}
-                        className="flex items-center gap-3 rounded-2xl border border-white/8 bg-black/16 px-4 py-3 text-sm text-white/86 transition-colors duration-300 group-hover:border-white/12"
+                              className="flex items-start gap-3 rounded-2xl border border-white/8 bg-black/16 px-4 py-3 text-sm text-white/86 transition-colors duration-300 group-hover:border-white/12"
                       >
-                        <Check className="h-4 w-4 text-accent" />
-                        {point}
+                              <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                              <span>{point}</span>
                       </div>
                     ))}
                   </div>
@@ -1454,9 +1454,9 @@ export default function App() {
                     <div className="text-3xl font-semibold tracking-[-0.05em] text-white">{item.price}</div>
                     <div className="pb-1 text-sm text-muted">{item.unit}</div>
                   </div>
-                  <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white/75">
+                  <div className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white/75">
                     <ChevronDown className="h-3.5 w-3.5 rotate-[-90deg] text-accent" />
-                    {item.lead}
+                    <span className="break-words">{item.lead}</span>
                   </div>
                 </motion.article>
               ))}
@@ -1542,8 +1542,8 @@ export default function App() {
             <div className="grid gap-5 lg:grid-cols-[1fr_0.92fr]">
               <div className="glass-panel rounded-[2rem] px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
                 <div className="max-w-2xl">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs uppercase tracking-[0.22em] text-accent">
-                    {content.section.cta.label}
+                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs uppercase tracking-[0.22em] text-accent">
+                    <span className="break-words">{content.section.cta.label}</span>
                   </div>
                   <h2 className="mt-5 text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl md:text-5xl">
                     {content.section.cta.title}
@@ -1553,7 +1553,7 @@ export default function App() {
                   </p>
                 </div>
 
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
                   <div className="contact-chip">
                     <Mail className="h-4 w-4 text-accent" />
                     <span>{emailLabel}</span>
@@ -1568,7 +1568,7 @@ export default function App() {
               <div className="glass-panel rounded-[2rem] p-6 sm:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-2xl font-semibold tracking-[-0.04em] text-white">
+                    <h3 className="text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-2xl">
                       {content.form.title}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-muted">{content.form.description}</p>

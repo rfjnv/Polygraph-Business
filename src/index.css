@@ -169,6 +169,10 @@ html[data-theme='light'] {
   box-shadow: none;
 }
 
+.logo-badge img {
+  display: block;
+}
+
 html[data-theme='light'] .logo-badge {
   background: transparent;
   box-shadow: none;
@@ -534,6 +538,119 @@ html[data-theme='light'] .language-menu-item-active {
   color: var(--color-heading);
 }
 
+.break-words {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 420px) {
+  .container-shell {
+    padding-inline: 14px;
+  }
+
+  .logo-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 1.05rem;
+    flex-shrink: 0;
+  }
+
+  .header-controls {
+    gap: 0.45rem;
+  }
+
+  .theme-toggle,
+  .language-switch {
+    min-height: 40px;
+  }
+
+  .language-switch {
+    padding-inline: 0.7rem;
+  }
+
+  .header-cta {
+    padding-inline: 0.85rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container-shell {
+    padding-inline: 12px;
+  }
+
+  .section-space {
+    padding-block: 3.75rem;
+  }
+
+  .logo-badge {
+    width: 52px;
+    height: 52px;
+  }
+
+  .header-controls {
+    gap: 0.4rem;
+  }
+
+  .theme-toggle,
+  .language-switch {
+    min-height: 38px;
+    min-width: 38px;
+  }
+
+  .language-switch {
+    padding-inline: 0.62rem;
+  }
+
+  .language-current {
+    font-size: 0.72rem;
+  }
+
+  .header-cta {
+    padding-inline: 0.78rem;
+    font-size: 0.78rem;
+  }
+
+  .header-controls .header-cta svg {
+    display: none;
+  }
+
+  .logo-badge + div {
+    min-width: 0;
+  }
+
+  .logo-badge + div > div:first-child {
+    font-size: 0.76rem;
+    letter-spacing: 0.13em;
+  }
+
+  .logo-badge + div > div:last-child {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .contact-chip {
+    min-height: unset;
+    padding: 0.85rem 0.9rem;
+    font-size: 0.92rem;
+  }
+
+  .field-shell {
+    gap: 0.55rem;
+  }
+
+  .field-shell input,
+  .field-shell select,
+  .field-shell textarea {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .contact-status {
+    border-radius: 1rem;
+    padding: 0.8rem 0.9rem;
+    font-size: 0.84rem;
+  }
+}
+
 html[data-theme='light'] .text-white {
   color: var(--color-heading);
 }
@@ -641,5 +758,23 @@ html[data-theme='light'] .bg-black\/20 {
 
   .section-space {
     padding-block: 6.75rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .header-controls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .header-controls > .header-cta {
+    margin-left: auto;
   }
 }
