@@ -169,44 +169,44 @@ const dictionaries: Record<Locale, Dictionary> = {
       products: 'Каталог',
       advantages: 'Преимущества',
       pricing: 'Цены',
-      trust: 'Почему нам доверяют',
+      trust: 'О компании',
       contact: 'Контакты',
-      cta: 'Запросить прайс',
+      cta: 'Связаться',
     },
     hero: {
-      badge: 'Поставщик материалов и расходников для полиграфии',
-      title: ['Материалы', 'и расходники', 'для полиграфии'],
+      badge: 'Поставщик материалов и расходников для полиграфии в Узбекистане',
+      title: ['Polygraph Business', 'поставщик для типографий', 'и упаковки'],
       subtitle:
-        'Polygraph Business поставляет материалы и расходники для типографий, упаковочных и печатных производств. Помогаем бизнесу закупать бумагу, пленку, фольгу, краски, химию и сопутствующие позиции в одном месте.',
-      primaryCta: 'Запросить прайс',
+        'Polygraph Business — B2B-компания из Ташкента, которая поставляет материалы и расходные решения для типографий, упаковочных и печатных производств. Первый экран сайта сразу показывает, кто мы, с каким рынком работаем и какие товарные направления закрываем.',
+      primaryCta: 'Связаться с нами',
       secondaryCta: 'Смотреть каталог',
       highlights: [
         [
-          'Широкий ассортимент',
-          'Бумага, ламинация, фольга, краски, офсетная резина, химия и вспомогательные материалы.',
+          'Кто мы',
+          'Профильный B2B-поставщик бумаги, пленок, фольги, красок, химии и других материалов для полиграфического производства.',
         ],
         [
-          'Фокус на B2B',
-          'Работаем для типографий, производств упаковки и компаний, которым важны стабильные поставки.',
+          'Где работаем',
+          'Базируемся в Ташкенте и работаем по рынку Узбекистана с типографиями, упаковочными и печатными компаниями.',
         ],
         [
-          'Понятные рыночные цены',
-          'Ориентируемся на рынок и держим цены в сравнении с ключевыми конкурентами.',
+          'Что закрываем',
+          'Помогаем закупать ключевые позиции через одного профильного поставщика: от бумаги и ламинации до красок и химии.',
         ],
       ],
-      statusLabel: 'supply status',
-      statusTitle: 'Материалы для полиграфии',
-      statusChip: 'B2B supply',
-      solutionTitle: 'Основные категории',
+      statusLabel: 'company profile',
+      statusTitle: 'Polygraph Business',
+      statusChip: 'B2B supplier',
+      solutionTitle: 'Основные направления',
       solutionItems: [
         ['Бумага и основы', 'Самоклеящаяся бумага, мелованная бумага, картон'],
         ['Ламинация и отделка', 'Пленки, soft touch, фольга для горячего тиснения'],
         ['Печатные расходники', 'Краски, офсетная резина, смывки и химия'],
       ],
-      launchLabel: 'Регион',
-      launchValue: 'Tashkent',
-      launchText: 'Работаем по рынку Узбекистана и под задачи типографий, упаковки и печатных производств.',
-      supplyTitle: 'Что поставляем',
+      launchLabel: 'На рынке',
+      launchValue: '2018',
+      launchText: 'Работаем с 15 марта 2018 года и фокусируемся на задачах типографий, упаковки и печатного производства.',
+      supplyTitle: 'Ключевые категории',
       supplyItems: ['Бумага и картон', 'Ламинация и фольга', 'Краски, химия, расходники'],
     },
     section: {
@@ -220,7 +220,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         label: 'Категории',
         title: 'Основные категории продукции',
         description:
-          'Ниже 3 ключевых направления, которые лучше всего отражают профиль компании и подходят для первого экрана каталога или лендинга.',
+          'Ниже показаны ключевые товарные направления, по которым можно быстро понять профиль компании и структуру поставок.',
       },
       pricing: {
         label: 'Цены',
@@ -229,10 +229,10 @@ const dictionaries: Record<Locale, Dictionary> = {
           'Ниже примерные стартовые цены по позициям, которые встречаются в сравнительной таблице компании.',
       },
       trust: {
-        label: 'Почему нам доверяют',
-        title: 'Поставщик с понятной логикой закупки для полиграфического бизнеса',
+        label: 'О компании',
+        title: 'Кратко о Polygraph Business',
         description:
-          'Компания выглядит как профильный поставщик для полиграфического рынка, где важны ассортимент, стабильность и понятная закупочная логика.',
+          'Polygraph Business — профильный B2B-поставщик материалов и расходников для полиграфии, упаковки и смежных производств в Узбекистане.',
       },
       cta: {
         label: 'Поставка для полиграфии без лишних задержек',
@@ -332,15 +332,15 @@ const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     metrics: [
-      { value: '10+', label: 'товарных направлений в ассортименте' },
-      { value: '117+', label: 'ценовых позиций в сравнении' },
-      { value: '8+', label: 'лет на рынке материалов и расходников для полиграфии' },
-      { value: 'B2B', label: 'фокус на типографии и производственные компании' },
+      { value: '2018', label: 'работаем на рынке с 15 марта 2018 года' },
+      { value: '10+', label: 'ключевых товарных направлений в ассортименте' },
+      { value: 'B2B', label: 'фокус на типографии, упаковку и производственные компании' },
+      { value: 'UZ', label: 'работаем из Ташкента по рынку Узбекистана' },
     ],
     trustPoints: [
-      'Подбор материалов под задачу, тираж и оборудование',
-      'Быстрый доступ к ходовым позициям и прозрачным ценам',
-      'Один контакт для бумаги, ламинации, красок, химии и расходников',
+      'Профиль компании считывается с первого экрана: поставщик материалов для полиграфии и упаковки.',
+      'Основные категории продукции собраны так, чтобы иностранец или новый партнер быстро понял специализацию бизнеса.',
+      'Коммуникация ориентирована на подбор позиций под задачу, тираж и формат производства.',
     ],
     fitFor: [
       'Типографии',
@@ -397,44 +397,44 @@ const dictionaries: Record<Locale, Dictionary> = {
       products: 'Katalog',
       advantages: 'Afzalliklar',
       pricing: 'Narxlar',
-      trust: 'Nega bizga ishonishadi',
+      trust: 'Kompaniya haqida',
       contact: 'Kontaktlar',
-      cta: 'Prays so‘rash',
+      cta: 'Bog‘lanish',
     },
     hero: {
-      badge: 'Poligrafiya uchun materiallar va sarf mahsulotlari yetkazib beruvchisi',
-      title: ['Materiallar', 'va sarf mahsulotlari', 'poligrafiya uchun'],
+      badge: 'O‘zbekistonda poligrafiya uchun materiallar va sarf mahsulotlari yetkazib beruvchisi',
+      title: ['Polygraph Business', 'tipografiya uchun yetkazib beruvchi', 'va qadoqlash uchun'],
       subtitle:
-        'Polygraph Business tipografiyalar, qadoqlash va bosma ishlab chiqarishlar uchun materiallar hamda sarf mahsulotlarini yetkazib beradi. Biznesga qog‘oz, plyonka, folga, bo‘yoq, kimyo va boshqa pozitsiyalarni bir joydan xarid qilishga yordam beramiz.',
-      primaryCta: 'Prays so‘rash',
+        'Polygraph Business — Toshkentdagi B2B kompaniya bo‘lib, tipografiyalar, qadoqlash va bosma ishlab chiqarishlar uchun materiallar hamda sarf yechimlarini yetkazib beradi. Birinchi ekran kompaniya kimligi, qaysi bozorda ishlashi va qaysi yo‘nalishlarni qamrab olishini darhol ko‘rsatadi.',
+      primaryCta: 'Biz bilan bog‘laning',
       secondaryCta: 'Katalogni ko‘rish',
       highlights: [
         [
-          'Keng assortiment',
-          'Qog‘oz, laminatsiya, folga, bo‘yoqlar, ofset rezina, kimyo va yordamchi materiallar.',
+          'Biz kimmiz',
+          'Qog‘oz, plyonka, folga, bo‘yoq, kimyo va boshqa poligrafik materiallar bo‘yicha ixtisoslashgan B2B yetkazib beruvchimiz.',
         ],
         [
-          'B2B fokus',
-          'Tipografiyalar, qadoqlash ishlab chiqarishlari va barqaror ta’minot muhim bo‘lgan kompaniyalar uchun ishlaymiz.',
+          'Qayerda ishlaymiz',
+          'Toshkentda joylashganmiz va O‘zbekiston bozorida tipografiyalar, qadoqlash hamda bosma kompaniyalar bilan ishlaymiz.',
         ],
         [
-          'Tushunarli bozor narxlari',
-          'Bozorga tayangan holda asosiy raqobatchilar bilan solishtiriladigan narxlarni ushlab turamiz.',
+          'Nimani yopamiz',
+          'Qog‘oz va laminatsiyadan tortib bo‘yoq va kimyogacha bo‘lgan asosiy xarid pozitsiyalarini bitta yetkazib beruvchi orqali yopishga yordam beramiz.',
         ],
       ],
-      statusLabel: 'supply status',
-      statusTitle: 'Poligrafiya materiallari',
-      statusChip: 'B2B supply',
-      solutionTitle: 'Asosiy kategoriyalar',
+      statusLabel: 'company profile',
+      statusTitle: 'Polygraph Business',
+      statusChip: 'B2B supplier',
+      solutionTitle: 'Asosiy yo‘nalishlar',
       solutionItems: [
         ['Qog‘oz va asoslar', 'O‘z-o‘zidan yopishuvchi qog‘oz, melovan qog‘oz, karton'],
         ['Laminatsiya va bezak', 'Plyonkalar, soft touch, issiq tısma uchun folga'],
         ['Bosma sarflari', 'Bo‘yoqlar, ofset rezina, yuvish va kimyo'],
       ],
-      launchLabel: 'Hudud',
-      launchValue: 'Tashkent',
-      launchText: 'O‘zbekiston bozori va tipografiya, qadoqlash hamda bosma ishlab chiqarishlar ehtiyojlariga mos ishlaymiz.',
-      supplyTitle: 'Nimalarni yetkazamiz',
+      launchLabel: 'Bozorda',
+      launchValue: '2018',
+      launchText: '2018-yil 15-martdan beri tipografiya, qadoqlash va bosma ishlab chiqarish ehtiyojlariga fokus bilan ishlaymiz.',
+      supplyTitle: 'Asosiy kategoriyalar',
       supplyItems: ['Qog‘oz va karton', 'Laminatsiya va folga', 'Bo‘yoqlar, kimyo, sarf mahsulotlari'],
     },
     section: {
@@ -448,7 +448,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         label: 'Kategoriyalar',
         title: 'Asosiy mahsulot kategoriyalari',
         description:
-          'Quyida kompaniya profilini eng yaxshi aks ettiradigan va katalog yoki landingning birinchi ekraniga mos 3 ta yo‘nalish berilgan.',
+          'Quyida kompaniya profili va yetkazib berish tuzilmasini tez tushunishga yordam beradigan asosiy yo‘nalishlar ko‘rsatilgan.',
       },
       pricing: {
         label: 'Narxlar',
@@ -457,10 +457,10 @@ const dictionaries: Record<Locale, Dictionary> = {
           'Quyida kompaniyaning solishtirma jadvalida uchraydigan pozitsiyalar bo‘yicha taxminiy boshlang‘ich narxlar keltirilgan.',
       },
       trust: {
-        label: 'Nega bizga ishonishadi',
-        title: 'Poligrafiya bozori uchun tushunarli xarid mantiqiga ega yetkazib beruvchi',
+        label: 'Kompaniya haqida',
+        title: 'Polygraph Business haqida qisqacha',
         description:
-          'Kompaniya assortiment, barqarorlik va tushunarli xarid mantig‘i muhim bo‘lgan poligrafiya bozori uchun ixtisoslashgan yetkazib beruvchi sifatida ko‘rinadi.',
+          'Polygraph Business — O‘zbekistonda poligrafiya, qadoqlash va unga yaqin ishlab chiqarishlar uchun materiallar hamda sarf mahsulotlari yetkazib beruvchi B2B kompaniya.',
       },
       cta: {
         label: 'Poligrafiya uchun yetkazib berish ortiqcha kechikishlarsiz',
@@ -560,15 +560,15 @@ const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     metrics: [
+      { value: '2018', label: '2018-yil 15-martdan beri bozorda' },
       { value: '10+', label: 'assortimentdagi asosiy yo‘nalishlar' },
-      { value: '117+', label: 'taqqoslashdagi narx pozitsiyalari' },
-      { value: '8+', label: '2018-yil 15-martdan beri bozorda' },
-      { value: 'B2B', label: 'tipografiya va ishlab chiqarish kompaniyalariga fokus' },
+      { value: 'B2B', label: 'tipografiya, qadoqlash va ishlab chiqarish kompaniyalariga fokus' },
+      { value: 'UZ', label: 'Toshkentdan turib O‘zbekiston bozorida ishlaymiz' },
     ],
     trustPoints: [
-      'Vazifa, tiraj va uskunaga mos materiallarni tanlash',
-      'Yuradigan pozitsiyalar va shaffof narxlarga tezkor kirish',
-      'Qog‘oz, laminatsiya, bo‘yoq, kimyo va sarflar uchun bitta kontakt',
+      'Kompaniya profili birinchi ekrandanoq tushunarli: poligrafiya va qadoqlash uchun materiallar yetkazib beruvchisi.',
+      'Mahsulot kategoriyalari xorijiy hamkor yoki yangi mijozga biznes yo‘nalishini tez anglashga yordam beradi.',
+      'Muloqot usuli vazifa, tiraj va ishlab chiqarish formatiga mos pozitsiyalarni tanlashga qaratilgan.',
     ],
     fitFor: [
       'Tipografiyalar',
@@ -625,44 +625,44 @@ const dictionaries: Record<Locale, Dictionary> = {
       products: 'Catalog',
       advantages: 'Advantages',
       pricing: 'Pricing',
-      trust: 'Why clients trust us',
+      trust: 'About company',
       contact: 'Contact',
-      cta: 'Request price list',
+      cta: 'Contact us',
     },
     hero: {
-      badge: 'Supplier of materials and consumables for print production',
-      title: ['Materials', 'and consumables', 'for print production'],
+      badge: 'Supplier of print materials and consumables in Uzbekistan',
+      title: ['Polygraph Business', 'supplier for printing houses', 'and packaging'],
       subtitle:
-        'Polygraph Business supplies materials and consumables for printing houses, packaging plants, and print manufacturers. We help businesses source paper, films, foils, inks, chemistry, and related items in one place.',
-      primaryCta: 'Request price list',
+        'Polygraph Business is a B2B company based in Tashkent, supplying materials and production consumables for printing houses, packaging plants, and print manufacturers. The hero section now works as a concise company profile, showing who we are, where we operate, and what product directions we cover.',
+      primaryCta: 'Contact us',
       secondaryCta: 'View catalog',
       highlights: [
         [
-          'Wide assortment',
-          'Paper, lamination, foil, inks, offset rubber, chemistry, and supporting materials.',
+          'Who we are',
+          'A focused B2B supplier of paper, films, foils, inks, chemistry, and other materials used in print production.',
         ],
         [
-          'B2B focus',
-          'We work for printing houses, packaging manufacturers, and companies that need stable supply.',
+          'Where we work',
+          'Based in Tashkent and serving the Uzbekistan market for printing, packaging, and related manufacturing companies.',
         ],
         [
-          'Clear market pricing',
-          'We follow the market and keep prices comparable to key competitors.',
+          'What we cover',
+          'We help clients source key procurement categories through one specialized supplier, from paper and lamination to inks and chemistry.',
         ],
       ],
-      statusLabel: 'supply status',
-      statusTitle: 'Materials for print production',
-      statusChip: 'B2B supply',
-      solutionTitle: 'Core categories',
+      statusLabel: 'company profile',
+      statusTitle: 'Polygraph Business',
+      statusChip: 'B2B supplier',
+      solutionTitle: 'Core directions',
       solutionItems: [
         ['Paper and base stock', 'Self-adhesive paper, coated paper, carton'],
         ['Lamination and finishing', 'Films, soft touch, hot stamping foil'],
         ['Print consumables', 'Inks, offset rubber, washes and chemistry'],
       ],
-      launchLabel: 'Region',
-      launchValue: 'Tashkent',
-      launchText: 'Built around the Uzbekistan print market and the needs of printing, packaging, and manufacturing companies.',
-      supplyTitle: 'What we supply',
+      launchLabel: 'On the market',
+      launchValue: '2018',
+      launchText: 'Operating since March 15, 2018 with a focus on printing houses, packaging, and print production needs.',
+      supplyTitle: 'Key categories',
       supplyItems: ['Paper and carton', 'Lamination and foil', 'Inks, chemistry, consumables'],
     },
     section: {
@@ -676,7 +676,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         label: 'Categories',
         title: 'Main product categories',
         description:
-          'These three directions best represent the company profile and are ideal for the first screen of the catalog or landing page.',
+          'These directions help a new visitor quickly understand the company profile and the main structure of the supply offering.',
       },
       pricing: {
         label: 'Pricing',
@@ -685,10 +685,10 @@ const dictionaries: Record<Locale, Dictionary> = {
           'Below are sample starting prices for positions that appear in the company’s comparison table.',
       },
       trust: {
-        label: 'Why clients trust us',
-        title: 'A supplier with a clear procurement logic for the print industry',
+        label: 'About company',
+        title: 'Polygraph Business at a glance',
         description:
-          'The company presents itself as a focused supplier for the print market, where assortment, stability, and practical purchasing logic matter.',
+          'Polygraph Business is a focused B2B supplier of materials and consumables for print, packaging, and related production businesses in Uzbekistan.',
       },
       cta: {
         label: 'Supply for print production without unnecessary delays',
@@ -788,15 +788,15 @@ const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     metrics: [
-      { value: '10+', label: 'product directions in the assortment' },
-      { value: '117+', label: 'price points in comparison tables' },
-      { value: '8+', label: 'years on the market since March 15, 2018' },
-      { value: 'B2B', label: 'focus on printing houses and manufacturing companies' },
+      { value: '2018', label: 'on the market since March 15, 2018' },
+      { value: '10+', label: 'core product directions in the assortment' },
+      { value: 'B2B', label: 'focus on printing houses, packaging, and manufacturing companies' },
+      { value: 'UZ', label: 'operating from Tashkent across the Uzbekistan market' },
     ],
     trustPoints: [
-      'Material selection based on the task, run size, and equipment',
-      'Fast access to key items and transparent pricing',
-      'One contact point for paper, lamination, inks, chemistry, and consumables',
+      'The company profile is clear from the first screen: a supplier for print and packaging materials.',
+      'Product categories are arranged so an international visitor or new partner can quickly understand the business specialization.',
+      'Communication is built around matching positions to the task, run size, and production format.',
     ],
     fitFor: [
       'Printing houses',
@@ -1142,14 +1142,11 @@ export default function App() {
               <a className="whitespace-nowrap transition-colors hover:text-white" href="#products">
                 {content.nav.products}
               </a>
-              <a className="whitespace-nowrap transition-colors hover:text-white" href="#advantages">
-                {content.nav.advantages}
-              </a>
-              <a className="whitespace-nowrap transition-colors hover:text-white" href="#pricing">
-                {content.nav.pricing}
-              </a>
               <a className="whitespace-nowrap transition-colors hover:text-white" href="#trust">
                 {content.nav.trust}
+              </a>
+              <a className="whitespace-nowrap transition-colors hover:text-white" href="#cta">
+                {content.nav.contact}
               </a>
             </nav>
 
@@ -1290,9 +1287,18 @@ export default function App() {
 
                 <div className="relative grid gap-4">
                   <div className="flex flex-wrap items-start justify-between gap-3 rounded-[1.5rem] border border-white/10 bg-black/18 px-4 py-3 sm:flex-nowrap sm:items-center">
-                    <div>
-                      <div className="text-xs uppercase tracking-[0.22em] text-muted">{content.hero.statusLabel}</div>
-                      <div className="mt-1 text-lg font-medium text-white">{content.hero.statusTitle}</div>
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/8 p-2">
+                        <img
+                          src="/logo-for-applications.png"
+                          alt="Polygraph Business logo"
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                      <div>
+                        <div className="text-xs uppercase tracking-[0.22em] text-muted">{content.hero.statusLabel}</div>
+                        <div className="mt-1 text-lg font-medium text-white">{content.hero.statusTitle}</div>
+                      </div>
                     </div>
                     <div className="rounded-full border border-accent/25 bg-accent/15 px-3 py-1 text-sm text-accent">
                       {content.hero.statusChip}
@@ -1343,37 +1349,6 @@ export default function App() {
                 </div>
               </div>
             </motion.div>
-          </MotionSection>
-
-          <MotionSection id="advantages" className="section-space border-t border-white/8" delay={0.05}>
-            <SectionHeading
-              label={content.section.advantages.label}
-              title={content.section.advantages.title}
-              description={content.section.advantages.description}
-            />
-
-            <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {content.features.map(({ icon: Icon, title, text }, index) => (
-                <motion.article
-                  key={title}
-                  className="glass-panel rounded-[1.75rem] p-6 hover-lift"
-                  initial={reduceMotion ? undefined : { opacity: 0, y: 24 }}
-                  whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={
-                    reduceMotion
-                      ? undefined
-                      : { duration: 0.55, delay: 0.07 * index, ease: [0.22, 1, 0.36, 1] }
-                  }
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/12 bg-white/8">
-                    <Icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <h3 className="mt-6 text-xl font-medium tracking-[-0.03em] text-white">{title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-muted">{text}</p>
-                </motion.article>
-              ))}
-            </div>
           </MotionSection>
 
           <MotionSection id="products" className="section-space border-t border-white/8" delay={0.08}>
@@ -1427,44 +1402,6 @@ export default function App() {
             </div>
           </MotionSection>
 
-          <MotionSection id="pricing" className="section-space border-t border-white/8" delay={0.1}>
-            <SectionHeading
-              label={content.section.pricing.label}
-              title={content.section.pricing.title}
-              description={content.section.pricing.description}
-            />
-
-            <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
-              {content.pricing.items.map((item, index) => (
-                <motion.article
-                  key={item.title}
-                  className="glass-panel rounded-[1.8rem] p-6 hover-lift"
-                  initial={reduceMotion ? undefined : { opacity: 0, y: 22 }}
-                  whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={
-                    reduceMotion
-                      ? undefined
-                      : { duration: 0.55, delay: 0.06 * index, ease: [0.22, 1, 0.36, 1] }
-                  }
-                >
-                  <div className="text-sm font-medium text-white">{item.title}</div>
-                  <p className="mt-3 text-sm leading-6 text-muted">{item.description}</p>
-                  <div className="mt-8 flex items-end gap-2">
-                    <div className="text-3xl font-semibold tracking-[-0.05em] text-white">{item.price}</div>
-                    <div className="pb-1 text-sm text-muted">{item.unit}</div>
-                  </div>
-                  <div className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white/75">
-                    <ChevronDown className="h-3.5 w-3.5 rotate-[-90deg] text-accent" />
-                    <span className="break-words">{item.lead}</span>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-
-            <p className="mt-6 text-sm leading-6 text-muted">{content.pricing.note}</p>
-          </MotionSection>
-
           <MotionSection id="trust" className="section-space border-t border-white/8" delay={0.12}>
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
               <SectionHeading
@@ -1499,7 +1436,7 @@ export default function App() {
             <div className="mt-10 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="glass-panel rounded-[2rem] p-6 sm:p-7">
                 <div className="text-sm uppercase tracking-[0.22em] text-muted">
-                  {locale === 'ru' ? 'Что получает клиент' : locale === 'uz' ? 'Mijoz nimani oladi' : 'Client outcome'}
+                  {locale === 'ru' ? 'Что важно знать' : locale === 'uz' ? 'Nimani bilish muhim' : 'What to know'}
                 </div>
                 <div className="mt-5 space-y-4">
                   {content.trustPoints.map((point) => (
@@ -1515,7 +1452,7 @@ export default function App() {
 
               <div className="glass-panel rounded-[2rem] p-6 sm:p-7">
                 <div className="text-sm uppercase tracking-[0.22em] text-muted">
-                  {locale === 'ru' ? 'Подходит для' : locale === 'uz' ? 'Kimlar uchun' : 'Built for'}
+                  {locale === 'ru' ? 'С кем работаем' : locale === 'uz' ? 'Kimlar bilan ishlaymiz' : 'Who we work with'}
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
                   {content.fitFor.map((item) => (
@@ -1529,10 +1466,10 @@ export default function App() {
                 </div>
                 <p className="mt-6 text-sm leading-7 text-muted">
                   {locale === 'ru'
-                    ? 'Если вам нужен не просто подрядчик, а спокойный и предсказуемый production-партнер, вы в правильном месте.'
+                    ? 'Если вам нужен понятный поставщик для полиграфии, упаковки и печатного производства, здесь можно быстро оценить профиль компании и связаться с нами.'
                     : locale === 'uz'
-                      ? 'Agar sizga oddiy pudratchi emas, balki xotirjam va bashorat qilinadigan production hamkor kerak bo‘lsa, bu to‘g‘ri joy.'
-                      : 'If you need more than a vendor, and want a calm, predictable production partner, you are in the right place.'}
+                      ? 'Agar sizga poligrafiya, qadoqlash va bosma ishlab chiqarish uchun tushunarli yetkazib beruvchi kerak bo‘lsa, bu yerda kompaniya profilini tez baholab, biz bilan bog‘lanishingiz mumkin.'
+                      : 'If you need a clear supplier profile for print, packaging, and production materials, this page helps you understand the company quickly and get in touch.'}
                 </p>
               </div>
             </div>
@@ -1703,14 +1640,11 @@ export default function App() {
               <span className="font-medium text-white">POLYGRAPH BUSINESS</span> — {content.footer.text}
             </div>
             <div className="flex flex-wrap gap-5">
-              <a className="transition-colors hover:text-white" href="#advantages">
-                {content.nav.advantages}
-              </a>
               <a className="transition-colors hover:text-white" href="#products">
                 {content.nav.products}
               </a>
-              <a className="transition-colors hover:text-white" href="#pricing">
-                {content.nav.pricing}
+              <a className="transition-colors hover:text-white" href="#trust">
+                {content.nav.trust}
               </a>
               <a className="transition-colors hover:text-white" href="#cta">
                 {content.nav.contact}
