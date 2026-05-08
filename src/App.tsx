@@ -1,13 +1,13 @@
 import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion'
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react'
 import heroMark from '../new-mini-logo.png'
-import brandGeometry from '../image.png'
 import foilAssortmentImage from '../photos/1.png'
 import consumablesImage from '../photos/6.png'
 import heroSceneImage from '../photos/8.png'
 import glossFoilImage from '../photos/12.png'
 import paperRollImage from '../photos/14.png'
 import matteFilmImage from '../photos/16.png'
+import warehouseImage from '../photos/warehouse.png'
 import {
   ArrowRight,
   BadgeCheck,
@@ -1257,7 +1257,7 @@ export default function App() {
             />
 
             <div className="material-showcase mt-10">
-              <div className="relative overflow-hidden rounded-[2rem]">
+              <div className="relative isolate overflow-hidden rounded-[2rem]">
                 <img
                   src={paperRollImage}
                   alt="White paper roll and print substrate sample"
@@ -1283,11 +1283,6 @@ export default function App() {
                         ? 'Qog‘oz, karton, plyonka va sarflarni tiraj, zichlik, bezak va muddatlarga mos tanlash.'
                         : 'Paper, carton, films, and consumables matched to run size, gsm, finishing, and lead time.'}
                   </p>
-                </div>
-                <div className="showcase-samples" aria-hidden="true">
-                  <div className="sample-sheet sample-sheet-white" />
-                  <div className="sample-sheet sample-sheet-blue" />
-                  <div className="sample-sheet sample-sheet-kraft" />
                 </div>
               </div>
             </div>
@@ -1432,19 +1427,12 @@ export default function App() {
 
             <div className="supply-chain-panel mt-10">
               <div className="supply-chain-visual">
-                <img src={brandGeometry} alt="Polygraph Business brand geometry" className="brand-geometry" />
-                <div className="warehouse-rack rack-left" />
-                <div className="warehouse-rack rack-right" />
-                <div className="warehouse-floor" />
-                <div className="warehouse-pallet pallet-one">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-                <div className="warehouse-pallet pallet-two">
-                  <span />
-                  <span />
-                </div>
+                <img
+                  src={warehouseImage}
+                  alt="Warehouse aisle with paper rolls, cartons, and packaging stock"
+                  className="supply-chain-photo"
+                />
+                <div className="supply-chain-photo-overlay" />
               </div>
               <div className="supply-chain-copy">
                 <div className="text-xs uppercase tracking-[0.24em] text-accent">
