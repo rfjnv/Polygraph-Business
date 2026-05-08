@@ -1,5 +1,10 @@
 import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion'
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react'
+import heroMark from '../new-mini-logo.png'
+import brandGeometry from '../image.png'
+import goldFoilImage from '../_a_roll_of_gold_foil_on_the_table_reflective_photography_primit_d27de8d1-e30b-4bba-8460-cc946e2e8212 1.png'
+import paperRollImage from '../_product_photography_of_a_roll_of_white_paper_on_a_beige_backgr_1d8ec099-267e-461f-91b7-a419b7de7e19 1.png'
+import laminateFilmImage from '../_a_roll_of_semi-transparent_white_polyester_film_lies_on_the_fl_a48c9bea-7e55-468f-bb01-c77f6964a154 1.png'
 import {
   ArrowRight,
   BadgeCheck,
@@ -10,7 +15,6 @@ import {
   Mail,
   MessageSquareText,
   Moon,
-  Package,
   Phone,
   Printer,
   ShieldCheck,
@@ -855,6 +859,28 @@ const initialFormState: ContactFormState = {
   details: '',
 }
 
+const productVisuals = [
+  {
+    image: paperRollImage,
+    tone: 'warm',
+    caption: { ru: 'Рулонная и листовая база', uz: 'Rulon va list asoslari', en: 'Roll and sheet base stock' },
+  },
+  {
+    image: goldFoilImage,
+    tone: 'gold',
+    caption: { ru: 'Фольга и декоративная отделка', uz: 'Folga va dekorativ bezak', en: 'Foil and decorative finishing' },
+  },
+  {
+    image: laminateFilmImage,
+    tone: 'cool',
+    caption: { ru: 'Пленки, химия и расходники', uz: 'Plyonkalar, kimyo va sarflar', en: 'Films, chemistry, consumables' },
+  },
+] satisfies Array<{
+  image: string
+  tone: 'warm' | 'gold' | 'cool'
+  caption: Record<Locale, string>
+}>
+
 const telegramConfigured = Boolean(import.meta.env.VITE_TELEGRAM_BOT_TOKEN && import.meta.env.VITE_TELEGRAM_CHAT_ID)
 const emailConfigured = Boolean(import.meta.env.VITE_EMAIL_ENDPOINT || import.meta.env.VITE_EMAILJS_SERVICE_ID)
 
@@ -1282,22 +1308,16 @@ export default function App() {
               viewport={{ once: true, amount: 0.22 }}
               transition={reduceMotion ? undefined : { duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="glass-panel relative overflow-hidden rounded-[2rem] p-5 sm:p-6">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(79,140,255,0.22),transparent_38%),radial-gradient(circle_at_bottom_left,rgba(255,122,24,0.16),transparent_32%)]" />
-
-                <div className="relative grid gap-4">
-                  <div className="flex flex-wrap items-start justify-between gap-3 rounded-[1.5rem] border border-white/10 bg-black/18 px-4 py-3 sm:flex-nowrap sm:items-center">
-                    <div className="flex items-center gap-4">
+              <div className="hero-showcase relative overflow-hidden rounded-[2rem] p-4 sm:p-5">
+                <div className="hero-stage">
+                  <div className="hero-stage-top">
+                    <div className="flex items-center gap-3">
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/8 p-2">
-                        <img
-                          src="/logo-for-applications.png"
-                          alt="Polygraph Business logo"
-                          className="h-full w-full object-contain"
-                        />
+                        <img src={heroMark} alt="Polygraph Business logo" className="h-full w-full object-contain" />
                       </div>
                       <div>
                         <div className="text-xs uppercase tracking-[0.22em] text-muted">{content.hero.statusLabel}</div>
-                        <div className="mt-1 text-lg font-medium text-white">{content.hero.statusTitle}</div>
+                        <div className="mt-1 text-base font-semibold text-white">{content.hero.statusTitle}</div>
                       </div>
                     </div>
                     <div className="rounded-full border border-accent/25 bg-accent/15 px-3 py-1 text-sm text-accent">
@@ -1305,44 +1325,53 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-[1.1fr_0.9fr]">
-                    <div className="glass-panel rounded-[1.75rem] p-5">
+                  <div className="hero-material-scene">
+                    <img
+                      src={laminateFilmImage}
+                      alt="Semi transparent lamination film roll on a dark industrial surface"
+                      className="hero-material-photo"
+                    />
+                    <div className="hero-material-overlay" />
+                    <div className="floating-sample sample-paper">
+                      <span>{locale === 'ru' ? 'Мелованная бумага' : locale === 'uz' ? 'Melovan qog‘oz' : 'Coated paper'}</span>
+                    </div>
+                    <div className="floating-sample sample-carton">
+                      <span>{locale === 'ru' ? 'Картон 300 gsm' : locale === 'uz' ? 'Karton 300 gsm' : 'Carton 300 gsm'}</span>
+                    </div>
+                    <div className="floating-sample sample-foil">
+                      <span>{locale === 'ru' ? 'Hot foil' : locale === 'uz' ? 'Hot foil' : 'Hot foil'}</span>
+                    </div>
+                  </div>
+
+                  <div className="hero-stage-grid">
+                    <div className="material-stack-card">
                       <div className="flex items-center justify-between gap-3">
                         <span className="text-sm text-muted">{content.hero.solutionTitle}</span>
                         <Printer className="h-5 w-5 text-accent" />
                       </div>
-                      <div className="mt-5 space-y-4">
+                      <div className="mt-5 space-y-3">
                         {content.hero.solutionItems.map(([title, text]) => (
-                          <div key={title} className="rounded-2xl border border-white/8 bg-white/4 p-4">
+                          <div key={title} className="supply-row">
                             <div className="text-sm font-medium text-white">{title}</div>
-                            <div className="mt-1 text-sm leading-6 text-muted">{text}</div>
+                            <div className="mt-1 text-xs leading-5 text-muted">{text}</div>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="grid gap-4">
-                      <div className="glass-panel rounded-[1.75rem] p-5">
-                        <div className="text-sm text-muted">{content.hero.launchLabel}</div>
-                        <div className="mt-3 text-4xl font-semibold tracking-[-0.05em] text-white">
-                          {content.hero.launchValue}
-                        </div>
-                        <div className="mt-2 text-sm leading-6 text-muted">{content.hero.launchText}</div>
+                    <div className="procurement-card">
+                      <div className="text-xs uppercase tracking-[0.22em] text-muted">{content.hero.launchLabel}</div>
+                      <div className="mt-3 text-5xl font-semibold tracking-[-0.06em] text-white">
+                        {content.hero.launchValue}
                       </div>
-
-                      <div className="glass-panel rounded-[1.75rem] p-5">
-                        <div className="flex items-center gap-3">
-                          <Package className="h-5 w-5 text-[#ff7a18]" />
-                          <span className="text-sm font-medium text-white">{content.hero.supplyTitle}</span>
-                        </div>
-                        <div className="mt-4 space-y-3">
-                          {content.hero.supplyItems.map((item) => (
-                            <div key={item} className="flex items-center gap-2 text-sm text-muted">
-                              <Check className="h-4 w-4 text-accent" />
-                              {item}
-                            </div>
-                          ))}
-                        </div>
+                      <p className="mt-2 text-sm leading-6 text-muted">{content.hero.launchText}</p>
+                      <div className="mt-5 space-y-2">
+                        {content.hero.supplyItems.map((item) => (
+                          <div key={item} className="flex items-center gap-2 text-sm text-white/84">
+                            <Check className="h-4 w-4 text-accent" />
+                            {item}
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -1358,11 +1387,47 @@ export default function App() {
               description={content.section.products.description}
             />
 
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div className="material-showcase mt-10">
+              <div className="relative overflow-hidden rounded-[2rem]">
+                <img
+                  src={paperRollImage}
+                  alt="White paper roll and print substrate sample"
+                  className="h-full min-h-[360px] w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/82 via-black/38 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/72 to-transparent" />
+                <div className="absolute left-5 top-5 max-w-md rounded-[1.5rem] border border-white/12 bg-black/38 p-5 backdrop-blur-md sm:left-7 sm:top-7 sm:p-6">
+                  <div className="text-xs uppercase tracking-[0.24em] text-accent">
+                    {locale === 'ru' ? 'Материалы в работе' : locale === 'uz' ? 'Ishdagi materiallar' : 'Materials in production'}
+                  </div>
+                  <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+                    {locale === 'ru'
+                      ? 'От основы до готовой упаковки'
+                      : locale === 'uz'
+                        ? 'Asosdan tayyor qadoqqacha'
+                        : 'From base stock to finished packaging'}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-white/75">
+                    {locale === 'ru'
+                      ? 'Подбор бумаги, картона, пленок и расходников под тираж, плотность, отделку и сроки поставки.'
+                      : locale === 'uz'
+                        ? 'Qog‘oz, karton, plyonka va sarflarni tiraj, zichlik, bezak va muddatlarga mos tanlash.'
+                        : 'Paper, carton, films, and consumables matched to run size, gsm, finishing, and lead time.'}
+                  </p>
+                </div>
+                <div className="showcase-samples" aria-hidden="true">
+                  <div className="sample-sheet sample-sheet-white" />
+                  <div className="sample-sheet sample-sheet-blue" />
+                  <div className="sample-sheet sample-sheet-kraft" />
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-5 lg:grid-cols-3">
               {content.products.map((product, index) => (
                 <motion.article
                   key={product.title}
-                  className="product-card group rounded-[2rem] p-6 sm:p-7"
+                  className={`product-card product-card-${productVisuals[index].tone} group overflow-hidden rounded-[2rem] p-5 sm:p-6`}
                   style={{
                     background:
                       index === 1
@@ -1378,6 +1443,15 @@ export default function App() {
                       : { duration: 0.6, delay: 0.08 * index, ease: [0.22, 1, 0.36, 1] }
                   }
                 >
+                  <div className="product-visual">
+                    <img
+                      src={productVisuals[index].image}
+                      alt={productVisuals[index].caption[locale]}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="product-visual-shade" />
+                    <div className="product-visual-label">{productVisuals[index].caption[locale]}</div>
+                  </div>
                   <div className="text-xs font-medium uppercase tracking-[0.22em] text-accent/90">
                     {product.eyebrow}
                   </div>
@@ -1399,6 +1473,60 @@ export default function App() {
                   </div>
                 </motion.article>
               ))}
+            </div>
+          </MotionSection>
+
+          <MotionSection className="section-space border-t border-white/8" delay={0.1}>
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+              <SectionHeading
+                label={locale === 'ru' ? 'Матовая и глянцевая отделка' : locale === 'uz' ? 'Mat va yaltiroq qoplama' : 'Matte and gloss finish'}
+                title={
+                  locale === 'ru'
+                    ? 'Материалы должны ощущаться до заявки'
+                    : locale === 'uz'
+                      ? 'Material buyurtmadan oldin ham sezilishi kerak'
+                      : 'Materials should feel tangible before the request'
+                }
+                description={
+                  locale === 'ru'
+                    ? 'Отражения, мягкие поверхности и фактура помогают закупщику быстрее понять, какие позиции подходят для упаковки, этикетки и премиальной полиграфии.'
+                    : locale === 'uz'
+                      ? 'Akslar, yumshoq sirtlar va faktura xaridorga qadoqlash, etiketka va premium poligrafiya uchun mos pozitsiyalarni tezroq tushunishga yordam beradi.'
+                      : 'Reflections, soft surfaces, and texture help procurement teams understand which materials fit packaging, label, and premium print work.'
+                }
+              />
+
+              <div className="finish-comparison">
+                <div className="finish-panel finish-panel-matte">
+                  <img src={laminateFilmImage} alt="Matte lamination surface close-up" />
+                  <div className="finish-copy">
+                    <div className="text-xs uppercase tracking-[0.22em] text-accent">Matte</div>
+                    <h3>{locale === 'ru' ? 'Soft touch и низкий блик' : locale === 'uz' ? 'Soft touch va past aks' : 'Soft touch and low glare'}</h3>
+                    <p>
+                      {locale === 'ru'
+                        ? 'Для премиальной упаковки, каталогов и продукции, где важна спокойная тактильность.'
+                        : locale === 'uz'
+                          ? 'Sokin taktil sezgi muhim bo‘lgan premium qadoq, katalog va mahsulotlar uchun.'
+                          : 'For premium packaging, catalogs, and products where a calm tactile feel matters.'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="finish-panel finish-panel-gloss">
+                  <img src={goldFoilImage} alt="Gloss foil reflection close-up" />
+                  <div className="finish-copy">
+                    <div className="text-xs uppercase tracking-[0.22em] text-[#ffd88a]">Gloss</div>
+                    <h3>{locale === 'ru' ? 'Глубокий блеск и акцент' : locale === 'uz' ? 'Chuqur yaltirash va urg‘u' : 'Deep shine and accent'}</h3>
+                    <p>
+                      {locale === 'ru'
+                        ? 'Для этикетки, декоративной отделки, тиснения и визуально заметных элементов.'
+                        : locale === 'uz'
+                          ? 'Etiketka, dekorativ bezak, tısma va ko‘zga tashlanadigan elementlar uchun.'
+                          : 'For labels, decorative finishing, stamping, and visually prominent details.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </MotionSection>
 
@@ -1430,6 +1558,48 @@ export default function App() {
                     <div className="mt-3 text-sm leading-6 text-muted">{metric.label}</div>
                   </motion.div>
                 ))}
+              </div>
+            </div>
+
+            <div className="supply-chain-panel mt-10">
+              <div className="supply-chain-visual">
+                <img src={brandGeometry} alt="Polygraph Business brand geometry" className="brand-geometry" />
+                <div className="warehouse-rack rack-left" />
+                <div className="warehouse-rack rack-right" />
+                <div className="warehouse-floor" />
+                <div className="warehouse-pallet pallet-one">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+                <div className="warehouse-pallet pallet-two">
+                  <span />
+                  <span />
+                </div>
+              </div>
+              <div className="supply-chain-copy">
+                <div className="text-xs uppercase tracking-[0.24em] text-accent">
+                  {locale === 'ru' ? 'Закупка и логистика' : locale === 'uz' ? 'Xarid va logistika' : 'Procurement and logistics'}
+                </div>
+                <h3>
+                  {locale === 'ru'
+                    ? 'Понятный процесс для отделов снабжения'
+                    : locale === 'uz'
+                      ? 'Ta’minot bo‘limlari uchun tushunarli jarayon'
+                      : 'A clear process for procurement teams'}
+                </h3>
+                <div className="procurement-steps">
+                  {[
+                    locale === 'ru' ? 'Заявка по материалам и объемам' : locale === 'uz' ? 'Material va hajm bo‘yicha so‘rov' : 'Request by material and volume',
+                    locale === 'ru' ? 'Подбор формата, плотности и отделки' : locale === 'uz' ? 'Format, zichlik va bezak tanlovi' : 'Format, gsm, and finish matching',
+                    locale === 'ru' ? 'Уточнение наличия и сроков поставки' : locale === 'uz' ? 'Mavjudlik va muddatlarni aniqlash' : 'Availability and lead-time check',
+                  ].map((step, index) => (
+                    <div key={step} className="procurement-step">
+                      <span>{index + 1}</span>
+                      {step}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -1634,21 +1804,65 @@ export default function App() {
           </MotionSection>
         </main>
 
-        <footer className="border-t border-white/8 py-8">
-          <div className="flex flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between">
+        <footer className="footer-panel border-t border-white/8 py-8">
+          <div className="grid gap-8 text-sm text-muted lg:grid-cols-[1.1fr_0.9fr_0.75fr]">
             <div>
-              <span className="font-medium text-white">POLYGRAPH BUSINESS</span> — {content.footer.text}
+              <div className="flex items-center gap-3">
+                <div className="logo-badge">
+                  <img src="/logo-for-applications.png" alt="Polygraph Business logo" className="h-full w-full object-contain" />
+                </div>
+                <div>
+                  <div className="font-semibold tracking-[0.18em] text-white">POLYGRAPH BUSINESS</div>
+                  <div className="mt-1 text-xs text-muted">{headerSubtitle}</div>
+                </div>
+              </div>
+              <p className="mt-5 max-w-xl leading-7">{content.footer.text}</p>
+              <p className="mt-3 max-w-xl leading-7">
+                {locale === 'ru'
+                  ? 'Поставка материалов для типографий, упаковочных производств, этикетки и регулярных B2B-закупок.'
+                  : locale === 'uz'
+                    ? 'Tipografiyalar, qadoqlash ishlab chiqarishlari, etiketka va muntazam B2B xaridlar uchun materiallar yetkazib berish.'
+                    : 'Material supply for printing houses, packaging manufacturers, labels, and recurring B2B procurement.'}
+              </p>
             </div>
-            <div className="flex flex-wrap gap-5">
-              <a className="transition-colors hover:text-white" href="#products">
-                {content.nav.products}
-              </a>
-              <a className="transition-colors hover:text-white" href="#trust">
-                {content.nav.trust}
-              </a>
-              <a className="transition-colors hover:text-white" href="#cta">
-                {content.nav.contact}
-              </a>
+
+            <div className="footer-business-card">
+              <div className="text-xs uppercase tracking-[0.22em] text-accent">
+                {locale === 'ru' ? 'Бизнес-профиль' : locale === 'uz' ? 'Biznes profili' : 'Business profile'}
+              </div>
+              <div className="mt-4 grid gap-3">
+                {[
+                  locale === 'ru' ? 'Складские и заказные позиции' : locale === 'uz' ? 'Ombordagi va buyurtma pozitsiyalari' : 'Stock and made-to-order positions',
+                  locale === 'ru' ? 'Бумага, картон, пленки, фольга' : locale === 'uz' ? 'Qog‘oz, karton, plyonka, folga' : 'Paper, carton, films, foil',
+                  locale === 'ru' ? 'Ташкент и рынок Узбекистана' : locale === 'uz' ? 'Toshkent va O‘zbekiston bozori' : 'Tashkent and Uzbekistan market',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-white/84">
+                    <Check className="h-4 w-4 text-accent" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="text-xs uppercase tracking-[0.22em] text-muted">
+                {locale === 'ru' ? 'Навигация' : locale === 'uz' ? 'Navigatsiya' : 'Navigation'}
+              </div>
+              <div className="mt-4 grid gap-3">
+                <a className="transition-colors hover:text-white" href="#products">
+                  {content.nav.products}
+                </a>
+                <a className="transition-colors hover:text-white" href="#trust">
+                  {content.nav.trust}
+                </a>
+                <a className="transition-colors hover:text-white" href="#cta">
+                  {content.nav.contact}
+                </a>
+              </div>
+              <div className="mt-6 grid gap-2 text-xs">
+                <span>{emailLabel}</span>
+                <span>{phoneLabel}</span>
+              </div>
             </div>
           </div>
         </footer>
