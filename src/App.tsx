@@ -40,14 +40,6 @@ type Product = {
   points: string[]
 }
 
-type PriceItem = {
-  title: string
-  description: string
-  price: string
-  unit: string
-  lead: string
-}
-
 type Dictionary = {
   meta: {
     title: string
@@ -56,7 +48,6 @@ type Dictionary = {
   nav: {
     products: string
     advantages: string
-    pricing: string
     trust: string
     contact: string
     cta: string
@@ -82,16 +73,11 @@ type Dictionary = {
   section: {
     advantages: { label: string; title: string; description: string }
     products: { label: string; title: string; description: string }
-    pricing: { label: string; title: string; description: string }
     trust: { label: string; title: string; description: string }
     cta: { label: string; title: string; description: string }
   }
   features: Feature[]
   products: Product[]
-  pricing: {
-    note: string
-    items: PriceItem[]
-  }
   metrics: { value: string; label: string }[]
   trustPoints: string[]
   fitFor: string[]
@@ -172,7 +158,6 @@ const dictionaries: Record<Locale, Dictionary> = {
     nav: {
       products: 'Каталог',
       advantages: 'Преимущества',
-      pricing: 'Цены',
       trust: 'О компании',
       contact: 'Контакты',
       cta: 'Связаться',
@@ -225,12 +210,6 @@ const dictionaries: Record<Locale, Dictionary> = {
         title: 'Основные категории продукции',
         description:
           'Ниже показаны ключевые товарные направления, по которым можно быстро понять профиль компании и структуру поставок.',
-      },
-      pricing: {
-        label: 'Цены',
-        title: 'Ориентировочные цены',
-        description:
-          'Ниже примерные стартовые цены по позициям, которые встречаются в сравнительной таблице компании.',
       },
       trust: {
         label: 'О компании',
@@ -302,39 +281,6 @@ const dictionaries: Record<Locale, Dictionary> = {
         ],
       },
     ],
-    pricing: {
-      note: 'Финальная стоимость зависит от формата, плотности, объема закупки, наличия и сроков поставки.',
-      items: [
-        {
-          title: 'Самоклеящаяся бумага',
-          description: 'Листовые позиции для печати и этикетки',
-          price: 'от 1 000 сум',
-          unit: '/ за лист',
-          lead: 'по наличию / уточнить',
-        },
-        {
-          title: 'Ламинационная пленка',
-          description: 'Глянцевая или матовая пленка для постпечатной обработки',
-          price: 'от 43 000 сум',
-          unit: '/ за рулон',
-          lead: 'по наличию / уточнить',
-        },
-        {
-          title: 'Фольга для горячего тиснения',
-          description: 'Золото, серебро и цветные решения для отделки',
-          price: 'от 150 000 сум',
-          unit: '/ за рулон',
-          lead: 'по наличию / уточнить',
-        },
-        {
-          title: 'Офсетные краски CMYK',
-          description: 'Базовые краски для типографского производства',
-          price: 'от 82 000 сум',
-          unit: '/ за кг',
-          lead: 'по наличию / уточнить',
-        },
-      ],
-    },
     metrics: [
       { value: '2018', label: 'работаем на рынке с 15 марта 2018 года' },
       { value: '10+', label: 'ключевых товарных направлений в ассортименте' },
@@ -400,7 +346,6 @@ const dictionaries: Record<Locale, Dictionary> = {
     nav: {
       products: 'Katalog',
       advantages: 'Afzalliklar',
-      pricing: 'Narxlar',
       trust: 'Kompaniya haqida',
       contact: 'Kontaktlar',
       cta: 'Bog‘lanish',
@@ -453,12 +398,6 @@ const dictionaries: Record<Locale, Dictionary> = {
         title: 'Asosiy mahsulot kategoriyalari',
         description:
           'Quyida kompaniya profili va yetkazib berish tuzilmasini tez tushunishga yordam beradigan asosiy yo‘nalishlar ko‘rsatilgan.',
-      },
-      pricing: {
-        label: 'Narxlar',
-        title: 'Taxminiy narxlar',
-        description:
-          'Quyida kompaniyaning solishtirma jadvalida uchraydigan pozitsiyalar bo‘yicha taxminiy boshlang‘ich narxlar keltirilgan.',
       },
       trust: {
         label: 'Kompaniya haqida',
@@ -530,39 +469,6 @@ const dictionaries: Record<Locale, Dictionary> = {
         ],
       },
     ],
-    pricing: {
-      note: 'Yakuniy narx format, zichlik, xarid hajmi, mavjudlik va yetkazib berish muddatiga bog‘liq.',
-      items: [
-        {
-          title: 'O‘z-o‘zidan yopishuvchi qog‘oz',
-          description: 'Bosma va etiketka uchun list pozitsiyalar',
-          price: '1 000 so‘mdan',
-          unit: '/ varaq',
-          lead: 'mavjud / aniqlanadi',
-        },
-        {
-          title: 'Laminatsion plyonka',
-          description: 'Post-bosma ishlov uchun yaltiroq yoki mat plyonka',
-          price: '43 000 so‘mdan',
-          unit: '/ rulon',
-          lead: 'mavjud / aniqlanadi',
-        },
-        {
-          title: 'Issiq tısma uchun folga',
-          description: 'Oltin, kumush va rangli bezak yechimlari',
-          price: '150 000 so‘mdan',
-          unit: '/ rulon',
-          lead: 'mavjud / aniqlanadi',
-        },
-        {
-          title: 'CMYK ofset bo‘yoqlari',
-          description: 'Tipografiya ishlab chiqarishi uchun asosiy bo‘yoqlar',
-          price: '82 000 so‘mdan',
-          unit: '/ 2,5 kg',
-          lead: 'mavjud / aniqlanadi',
-        },
-      ],
-    },
     metrics: [
       { value: '2018', label: '2018-yil 15-martdan beri bozorda' },
       { value: '10+', label: 'assortimentdagi asosiy yo‘nalishlar' },
@@ -628,7 +534,6 @@ const dictionaries: Record<Locale, Dictionary> = {
     nav: {
       products: 'Catalog',
       advantages: 'Advantages',
-      pricing: 'Pricing',
       trust: 'About company',
       contact: 'Contact',
       cta: 'Contact us',
@@ -681,12 +586,6 @@ const dictionaries: Record<Locale, Dictionary> = {
         title: 'Main product categories',
         description:
           'These directions help a new visitor quickly understand the company profile and the main structure of the supply offering.',
-      },
-      pricing: {
-        label: 'Pricing',
-        title: 'Indicative prices',
-        description:
-          'Below are sample starting prices for positions that appear in the company’s comparison table.',
       },
       trust: {
         label: 'About company',
@@ -758,39 +657,6 @@ const dictionaries: Record<Locale, Dictionary> = {
         ],
       },
     ],
-    pricing: {
-      note: 'Final cost depends on format, gsm, purchase volume, stock availability, and delivery lead time.',
-      items: [
-        {
-          title: 'Self-adhesive paper',
-          description: 'Sheet stock for print and label production',
-          price: 'from 1,000 UZS',
-          unit: '/ sheet',
-          lead: 'in stock / check availability',
-        },
-        {
-          title: 'Lamination film',
-          description: 'Gloss or matte film for post-print processing',
-          price: 'from 43,000 UZS',
-          unit: '/ roll',
-          lead: 'in stock / check availability',
-        },
-        {
-          title: 'Hot stamping foil',
-          description: 'Gold, silver, and colored finishing solutions',
-          price: 'from 150,000 UZS',
-          unit: '/ roll',
-          lead: 'in stock / check availability',
-        },
-        {
-          title: 'CMYK offset inks',
-          description: 'Base inks for print production',
-          price: 'from 82,000 UZS',
-          unit: '/ 2.5 kg',
-          lead: 'in stock / check availability',
-        },
-      ],
-    },
     metrics: [
       { value: '2018', label: 'on the market since March 15, 2018' },
       { value: '10+', label: 'core product directions in the assortment' },
