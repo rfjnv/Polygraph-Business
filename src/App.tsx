@@ -2,9 +2,12 @@ import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-moti
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react'
 import heroMark from '../new-mini-logo.png'
 import brandGeometry from '../image.png'
-import goldFoilImage from '../_a_roll_of_gold_foil_on_the_table_reflective_photography_primit_d27de8d1-e30b-4bba-8460-cc946e2e8212 1.png'
-import paperRollImage from '../_product_photography_of_a_roll_of_white_paper_on_a_beige_backgr_1d8ec099-267e-461f-91b7-a419b7de7e19 1.png'
-import laminateFilmImage from '../_a_roll_of_semi-transparent_white_polyester_film_lies_on_the_fl_a48c9bea-7e55-468f-bb01-c77f6964a154 1.png'
+import foilAssortmentImage from '../photos/1.png'
+import consumablesImage from '../photos/6.png'
+import heroSceneImage from '../photos/8.png'
+import glossFoilImage from '../photos/12.png'
+import paperRollImage from '../photos/14.png'
+import matteFilmImage from '../photos/16.png'
 import {
   ArrowRight,
   BadgeCheck,
@@ -732,12 +735,12 @@ const productVisuals = [
     caption: { ru: 'Рулонная и листовая база', uz: 'Rulon va list asoslari', en: 'Roll and sheet base stock' },
   },
   {
-    image: goldFoilImage,
+    image: foilAssortmentImage,
     tone: 'gold',
     caption: { ru: 'Фольга и декоративная отделка', uz: 'Folga va dekorativ bezak', en: 'Foil and decorative finishing' },
   },
   {
-    image: laminateFilmImage,
+    image: consumablesImage,
     tone: 'cool',
     caption: { ru: 'Пленки, химия и расходники', uz: 'Plyonkalar, kimyo va sarflar', en: 'Films, chemistry, consumables' },
   },
@@ -1193,8 +1196,8 @@ export default function App() {
 
                   <div className="hero-material-scene">
                     <img
-                      src={laminateFilmImage}
-                      alt="Semi transparent lamination film roll on a dark industrial surface"
+                      src={heroSceneImage}
+                      alt="Premium lamination film roll on a dark industrial surface"
                       className="hero-material-photo"
                     />
                     <div className="hero-material-overlay" />
@@ -1364,7 +1367,7 @@ export default function App() {
 
               <div className="finish-comparison">
                 <div className="finish-panel finish-panel-matte">
-                  <img src={laminateFilmImage} alt="Matte lamination surface close-up" />
+                  <img src={matteFilmImage} alt="Matte lamination surface close-up" />
                   <div className="finish-copy">
                     <div className="text-xs uppercase tracking-[0.22em] text-accent">Matte</div>
                     <h3>{locale === 'ru' ? 'Soft touch и низкий блик' : locale === 'uz' ? 'Soft touch va past aks' : 'Soft touch and low glare'}</h3>
@@ -1379,7 +1382,7 @@ export default function App() {
                 </div>
 
                 <div className="finish-panel finish-panel-gloss">
-                  <img src={goldFoilImage} alt="Gloss foil reflection close-up" />
+                  <img src={glossFoilImage} alt="Gloss foil reflection close-up" />
                   <div className="finish-copy">
                     <div className="text-xs uppercase tracking-[0.22em] text-[#ffd88a]">Gloss</div>
                     <h3>{locale === 'ru' ? 'Глубокий блеск и акцент' : locale === 'uz' ? 'Chuqur yaltirash va urg‘u' : 'Deep shine and accent'}</h3>
